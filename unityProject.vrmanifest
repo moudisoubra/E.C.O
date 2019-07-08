@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.e.c.ossd.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\E.C.O Git\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "E.C.O SSD [Testing]"
+        }
+      }
+    }
+  ]
+}
