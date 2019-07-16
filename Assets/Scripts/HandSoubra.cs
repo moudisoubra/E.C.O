@@ -74,16 +74,20 @@ public class HandSoubra : MonoBehaviour
         if (!currentInteractable)
             return;
 
-        //Rigidbody targetBody = currentInteractable.GetComponent<Rigidbody>();
-        //targetBody.velocity = pose.GetVelocity();
-        //targetBody.angularVelocity = pose.GetAngularVelocity();
-        //targetBody.maxAngularVelocity = targetBody.angularVelocity.magnitude;
-
+        //Throw();
 
         joint.connectedBody = null;
 
         currentInteractable.activeHand = null;
         currentInteractable = null;
+    }
+
+    public void Throw()
+    {
+        Rigidbody targetBody = currentInteractable.GetComponent<Rigidbody>();
+        targetBody.velocity = pose.GetVelocity();
+        targetBody.angularVelocity = pose.GetAngularVelocity();
+        targetBody.maxAngularVelocity = targetBody.angularVelocity.magnitude;
     }
 
     private InteractableSoubra GetNearestIS()
