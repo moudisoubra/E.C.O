@@ -63,6 +63,8 @@ public class VRController : MonoBehaviour
             movement += orientation * (speed * Vector3.forward) * Time.deltaTime;
         }
 
+        movement.y += Physics.gravity.y * Time.deltaTime; // Did this to apply gravity to a character controller.
+
         cController.Move(movement);
     }
 

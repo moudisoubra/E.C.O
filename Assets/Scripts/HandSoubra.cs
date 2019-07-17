@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 public class HandSoubra : MonoBehaviour
 {
@@ -74,9 +75,10 @@ public class HandSoubra : MonoBehaviour
         if (!currentInteractable)
             return;
 
-        //Throw();
-
         joint.connectedBody = null;
+
+        Throw();
+
 
         currentInteractable.activeHand = null;
         currentInteractable = null;
@@ -85,9 +87,8 @@ public class HandSoubra : MonoBehaviour
     public void Throw()
     {
         Rigidbody targetBody = currentInteractable.GetComponent<Rigidbody>();
-        targetBody.velocity = pose.GetVelocity();
-        targetBody.angularVelocity = pose.GetAngularVelocity();
-        targetBody.maxAngularVelocity = targetBody.angularVelocity.magnitude;
+        Debug.Log("Velocity: " + pose.GetVelocity());
+        Debug.Log("AngularVelocity: " + pose.GetAngularVelocity());
     }
 
     private InteractableSoubra GetNearestIS()
